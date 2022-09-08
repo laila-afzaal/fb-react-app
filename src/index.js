@@ -1,17 +1,53 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
+import "./index.css"
+import image from "./img/img1.jpg";
+import image4 from "./img/img4.jpg";
+import image5 from "./img/img5.jpg";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const MediaCard = ({ title, body, imageUrl }) => (
+  <div className='mediaCard'>
+    <h2>
+      {title}
+    </h2>
+    
+    <p>
+      {body}
+    </p>
+    <img width={400} src={imageUrl} alt="" />
+  </div>
+)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const MediaPage = () => (
+  <>
+    <MediaCard
+      title="Nature"
+      body="Scenery"
+      imageUrl={image}
+    />
+    <MediaCard
+      title="Nature"
+      body="Scenery"
+      imageUrl={image4}
+    />
+    <MediaCard
+      title="Nature"
+      body="Scenery"
+      // imageUrl="https://data.whicdn.com/images/315718705/original.jpg"
+      imageUrl={image5}
+    />
+     <MediaCard
+      title="Nature"
+      body="Scenery"
+      imageUrl={image4}
+    />
+     <MediaCard
+      title="Nature"
+      body="Scenery"
+      imageUrl={image5}
+    />
+  </>
+)
+
+
+ReactDOM.render(<MediaPage />, document.querySelector('#root'));
